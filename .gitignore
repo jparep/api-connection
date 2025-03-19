@@ -1,0 +1,19 @@
+# Ignore sensitive configuration files
+.env
+config.json
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore cache and dependency directories
+node_modules/
+dist/
+build/
+
+# Ignore API connection raw data files
+*.raw
