@@ -6,10 +6,7 @@ if __name__ == "__main__":
     data = fetch_cdc_data()
     
     if data:
-        with open("cdc_data.json", "w") as file:
-            json.dump(data, file, indent=4)
         print("CDC Data Fetched Successfully. Proceeding to Load.")
-        
-        load_data_to_snowflake()
+        load_data_to_snowflake(data)
     else:
         print("No data received. Aborting load process.")

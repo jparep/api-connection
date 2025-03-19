@@ -6,7 +6,7 @@ from config import (
 )
 
 def load_data_to_snowflake(data):
-    """Load CDC JSON data directly into Snowflake without file storage."""
+    """Load CDC JSON data directly into Snowflake without creating tables dynamically."""
     if not data:
         print("No data to load.")
         return
@@ -20,16 +20,6 @@ def load_data_to_snowflake(data):
         )
 
         cursor = conn.cursor()
-
-        # Ensure Table Exists
-        create_table_query = f"""
-        CREATE TABLE IF NOT EXISTS {SNOWFLAKE_DATABASE}.{SNOWFLAKE_SCHEMA}.{SNOWFLAKE_TABLE} (
-            id STRING,
-            payload VARIANT,
-            timestamp TIMESTAMP
-        );
-        """
-        cursor.execute(create_table_query)
 
         # Prepare Data for Insertion
         values_list = ", ".join([
