@@ -17,3 +17,5 @@ build/
 
 # Ignore API connection raw data files
 *.raw
+
+.gitlab-ci.yml
