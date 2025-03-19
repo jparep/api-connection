@@ -18,4 +18,10 @@ build/
 # Ignore API connection raw data files
 *.raw
 
+# Gitlab ignore
 .gitlab-ci.yml
+
+.env
+cdc_data.json
+__pycache__/
+*.pyc
